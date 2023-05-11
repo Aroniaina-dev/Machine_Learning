@@ -25,7 +25,7 @@
 
 .login-dark .illustration {
     text-align: center;
-    padding: 15px 0 20px;
+    /* padding: 15px 0 20px; */
     font-size: 100px;
     color: #2980ef;
 }
@@ -94,4 +94,9 @@
     left: 33%;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
 }

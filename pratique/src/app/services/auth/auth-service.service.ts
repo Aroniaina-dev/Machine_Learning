@@ -65,10 +65,8 @@ export class AuthServiceService {
   loggedIn(): boolean {
     const token: string | null = localStorage.getItem('id_token');
     if (token != null) {
-      console.log("misy token");
       return true;
     }
-    console.log("tsy misy token")
     return false;
   }
 

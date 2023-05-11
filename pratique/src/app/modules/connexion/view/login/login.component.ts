@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
@@ -11,9 +12,6 @@ import { AuthServiceService } from 'src/app/services/auth/auth-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  // username: string = 'admin@gmail.com';
-  // password: string = 'password';
-
   username: string = '';
   password: string = '';
   wornguser: boolean = false;
@@ -23,7 +21,11 @@ export class LoginComponent implements OnInit {
   formGroup !: FormGroup;
   user: User = new User();
 
-  constructor(private authentificationService: AuthServiceService, private router: Router, private readonly fb: FormBuilder, private toastr: ToastrService) { }
+  constructor(private authentificationService: AuthServiceService, private router: Router, private readonly fb: FormBuilder, private toastr: ToastrService) {
+    this.worngFormat = false;
+    this.wornguser = false;
+    this.loader = false;
+  }
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
@@ -34,22 +36,30 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.formGroup.valid) {
-      this.authentificationService.login(this.username, this.password).subscribe(response => {
-        this.loader = true;
-        this.data = response;
-        if (response.isSuccess) {
-          this.user.nom = "Aroniaina";
-          this.user.prenom = "Manda";
-          this.authentificationService.storeUserData(response.token,this.user);
-          this.loader = false;
-          this.router.navigate(['/web_service']);
-        } else {
-          this.wornguser = true;
-        }
-      });
+      try {
+        this.authentificationService.login(this.username, this.password).subscribe(response => {
+          this.loader = true;
+          this.data = response;
+          if (response.isSuccess) {
+            this.user.nom = "Aroniaina";
+            this.user.prenom = "Manda";
+            this.authentificationService.storeUserData(response.token, this.user);
+            this.loader = false;
+            this.wornguser = false;
+            this.worngFormat = false;
+            this.router.navigate(['/web_service']);
+          } else {
+            this.wornguser = true;
+            this.loader = false;
+          }
+        });
+      } catch (error) {
+        this.worngFormat = true;
+        this.loader = false;
+      }
     }
-    else{
-      this.toastr.error("Veuillez remplir les champs!!!");
+    else {
+      this.worngFormat = true;
     }
   }
 }

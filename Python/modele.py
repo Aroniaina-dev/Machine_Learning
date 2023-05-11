@@ -41,27 +41,11 @@ def login():
     return jsonify({
         'isSuccess': False,
         'error': 'Invalid username or password'
-    }), 401
+    }), 200
 
-
-@app.route('/api/protected', methods=['GET'])
-def protected():
-    token = request.headers.get('Authorization')
-    if not token:
-        return jsonify({'error': 'Token is missing'}), 401
-
-    try:
-        payload = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
-        username = payload['username']
-
-        return jsonify({'message': f'Hello, {username}! This is protected data.'})
-
-    except jwt.ExpiredSignatureError:
-        return jsonify({'error': 'Token has expired'}), 401
-    except jwt.InvalidTokenError:
-        return jsonify({'error': 'Invalid token'}), 401
 
 
 if __name__ == '__main__':
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=5000)
     app.run(debug=True)
-    # print ("Test")
