@@ -1,0 +1,22 @@
+<div class="login-dark">
+    <form method="post" [formGroup]="formGroup" (ngSubmit)="login()">
+        <h2 class="titre_login">Machine Learning</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <div class="form-group">
+            <input class="form-control" type="email" [(ngModel)]="username" formControlName="username" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" [(ngModel)]="password" formControlName="password" placeholder="Mot de passe">
+        </div>
+        <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit" *ngIf="!loader">Se Connecter</button>
+            <button class="btn btn-primary btn-block" type="button" disabled *ngIf="loader"><i class="fa fa-spinner fa-spin"></i>Connexion en cours...</button>
+        </div>
+    </form>
+    <div class="erreur_message" *ngIf="wornguser">
+        <h4>Erreur de connexion. Veuillez réessayer!</h4>
+    </div>
+    <div class="erreur_message" *ngIf="worngFormat">
+        <h4>Veuillez remplir les champs!!!</h4>
+    </div>
+</div>

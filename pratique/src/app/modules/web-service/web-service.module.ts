@@ -9,7 +9,7 @@ import { UpdateComponent } from './view/update/update.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    UpdateComponent
+    UpdateComponent,
   ],
   imports: [
     CommonModule,

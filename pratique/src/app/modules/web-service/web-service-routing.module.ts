@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NoConnectionGuard } from 'src/app/guard/no-connection.guard';
 import { HomeComponent } from './view/home/home.component';
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate:[NoConnectionGuard]
   },
 ];
 

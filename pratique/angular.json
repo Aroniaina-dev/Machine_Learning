@@ -16,16 +16,18 @@
             "outputPath": "dist/pratique",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/fonts/fontawesome-all.min.css",
+              "src/assets/fonts/font-awesome.min.css",
+              "src/assets/fonts/ionicons.min.css",
+              "src/assets/fonts/fontawesome5-overrides.min.css"
             ],
             "scripts": []
           },
@@ -77,10 +79,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               "src/favicon.ico",

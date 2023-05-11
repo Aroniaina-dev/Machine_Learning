@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebServiceService {
-  private apiUrl = 'http://127.0.0.1:5000/api/produits';
-  private apiUrl_post = 'http://127.0.0.1:5000/api/value';
+
+  private apiUrl = environment.end_point+'produits';
+  private apiUrl_post = environment.end_point+'value';
 
   constructor(private http: HttpClient) { }
 
