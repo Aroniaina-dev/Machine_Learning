@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WebServiceService } from '../../../../services/web-service.service';
+import { WebServiceService } from '../../../../services/webService/web-service.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +8,7 @@ import { WebServiceService } from '../../../../services/web-service.service';
 })
 export class HomeComponent implements OnInit {
   data: any;
+  dataProduct: any;
 
   constructor(private monService: WebServiceService) { }
 
@@ -16,5 +17,9 @@ export class HomeComponent implements OnInit {
     this.monService.sendData(dataToSend).subscribe(response => {
       this.data = response;
     });
+
+    this.monService.getData().subscribe(response =>{
+      this.dataProduct = response;
+    })
   }
 }
