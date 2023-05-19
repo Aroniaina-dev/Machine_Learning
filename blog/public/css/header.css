@@ -1,0 +1,224 @@
+:root {
+    --couleur-principale: #FF7D00;
+    --couleur-white: #fff;
+    --couleur-black: #001524;
+    --couleur-primary: rgb(245, 234, 242);
+    --couleur-secondary: #FFECD1;
+    --couleur-green: #156E62;
+}
+
+
+
+/* @font-face {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    src: url('/public/Font/PPEiko-LightItalic.ttf') format('opentype');
+} */
+
+p {
+    font-family: 'Salma Alfa Sans Regular';
+    src: url('/public/Font/SalmaAlfasans Regular.otf') format('truetype');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'IvyOra Display Regular';
+    src: url('/public/Font/PPEiko-Regular.ttf') format('truetype');
+}
+
+#main {
+    background: var(--couleur-secondary);
+    padding: 10px;
+}
+
+header {
+    background: var(--couleur-secondary);
+}
+
+footer {
+    background: var(--couleur-secondary);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    color: #000000;
+    font-family: 'HelloParisSerifVariable-Reg';
+    margin-bottom: 12%;
+    margin-top: 10%;
+}
+
+body {
+    background: var(--couleur-secondary);
+}
+
+#bouttonSeConnecter {
+    background-color: var(--couleur-principale);
+    border: none;
+    color: var(--couleur-white);
+    margin-left: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    src: url('/public/Font/SalmaAlfasans\ Bold.otf');
+    font-size: large;
+    border-radius: 0;
+    width: 20%;
+}
+
+#navBarMenu {
+    font-family: Goudy Old Style;
+    font-size: xx-large;
+    margin-left: 70%;
+}
+
+#navBarIsAdmin {
+    font-family: Goudy Old Style;
+    font-size: x-large;
+    left: 0;
+    float: left;
+    margin-left: 2%;
+}
+
+#navBarHome {
+    font-family: Goudy Old Style;
+    font-size: xx-large;
+}
+
+#navBarReservation {
+    font-family: Goudy Old Style;
+    font-size: xx-large;
+}
+
+#bouttonVoirCartes {
+    background-color: var(--couleur-principale);
+    border: none;
+    color: var(--couleur-white);
+    margin-left: auto;
+    font-size: large;
+    border-radius: 0;
+}
+
+#login {
+    background-color: var(--couleur-principale);
+    border: none;
+    color: var(--couleur-white);
+    margin-left: auto;
+    font-size: large;
+    border-radius: 0;
+    font-family: 'Salma Alfa Sans Medium';
+    src: url('/public/Font/SalmaAlfasans ThinItalic.otf') format('truetype');
+}
+
+#bouttonReserverTable {
+    background-color: var(--couleur-principale);
+    border: none;
+    color: var(--couleur-white);
+    margin-left: auto;
+    font-size: large;
+    border-radius: 0;
+}
+
+#titre {
+    flex: 1;
+    font-family: 'AkagiProW00-LightItalic';
+    font-size: xx-large;
+}
+
+#textChef {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10%;
+    /* font-size: 120px; */
+    font-family: "Microsoft Tai Le";
+}
+
+#imageHeader {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-left: 25%;
+}
+
+.containerImageHeader {
+    display: flex;
+    border: none;
+}
+
+.containerImageHeader col img {
+    margin-bottom: 10px;
+}
+
+.containerImageHeader2 {
+    display: flex;
+    border: none;
+}
+
+.containerImageHeader2 col img {
+    margin-bottom: 10px;
+}
+
+#image1 img {
+    width: 100%;
+    height: 100%;
+}
+
+#image2 img {
+    width: 100%;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#image3 img {
+    width: 100%;
+    height: 100%;
+}
+
+#image4 img {
+    width: 100%;
+    height: 100%;
+}
+
+#image5 img {
+    width: 100%;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#image6 img {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-container>img {
+    margin: 2px;
+}
+
+#navigationPage {
+    background: var(--couleur-white);
+}
+
+#navigationPage a {
+    margin: 0 20px;
+    font-family: 'IvyOra Display Medium';
+    src: url('/public/Font/PPEiko-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: x-large;
+}
+
+button {
+    font-family: 'Salma Alfa Sans Medium';
+    src: url('/public/Font/SalmaAlfasans ThinItalic.otf') format('truetype');
+}
+
+
